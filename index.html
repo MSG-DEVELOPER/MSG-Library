@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Mini Librería de APIs</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background: #f5f5f5;
+    }
+
+    h1 {
+      color: #333;
+    }
+
+    code {
+      background: #e0e0e0;
+      padding: 2px 4px;
+      border-radius: 4px;
+    }
+
+    button {
+      margin-top: 1rem;
+      padding: 10px 15px;
+      background-color: #333;
+      color: white;
+      border: none;
+      cursor: pointer;
+      border-radius: 4px;
+    }
+
+    #joke {
+      margin-top: 1rem;
+      font-style: italic;
+    }
+
+    footer {
+      margin-top: 3rem;
+      font-size: 0.9em;
+      color: #555;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>📦 Mini Librería de APIs</h1>
+  <p>
+    Esta es una librería ultra sencilla para hacer llamadas a algunas de las APIs más populares con una sola línea de código.
+    Ideal para quienes quieren empezar un proyecto rápido y no quieren perder tiempo con <code>fetch</code> y configuración.
+  </p>
+
+  <h2>🚀 ¿Cómo se usa?</h2>
+  <ol>
+    <li>Descarga o enlaza el archivo <code>apiLibrary.js</code>.</li>
+    <li>Inclúyelo en tu HTML con una etiqueta <code>&lt;script&gt;</code>.</li>
+    <li>Usa comandos simples como: <code>APIUtils.llamada_API_chuck()</code></li>
+  </ol>
+
+  <h2>💡 Ejemplo en vivo (Chuck Norris API):</h2>
+  <button id="getJoke">¡Dame un chiste!</button>
+  <p id="joke"></p>
+
+  <script src="./apiCalls/apiLibrary.js"></script>
+  <script>
+    document.getElementById('getJoke').addEventListener('click', function() {
+      APIUtils.llamada_API_chuck()
+        .then(function(joke) {
+          document.getElementById('joke').innerText = joke;
+        })
+        .catch(function(error) {
+          document.getElementById('joke').innerText = "Error al obtener el chiste.";
+        });
+    });
+  </script>
+
+  <footer>
+    Hecho con 💻 por [TuNombre]. Proyecto piloto.
+  </footer>
+
+</body>
+</html>
