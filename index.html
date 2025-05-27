@@ -3,126 +3,67 @@
   <head>
     <meta charset="UTF-8" />
     <title>Mini Librería de APIs</title>
-    <style>
-      body {
-        font-family: sans-serif;
-        max-width: 700px;
-        margin: 2rem auto;
-        padding: 1rem;
-        background: #f5f5f5;
-      }
-
-      h1 {
-        color: #333;
-      }
-
-      code {
-        background: #e0e0e0;
-        padding: 2px 4px;
-        border-radius: 4px;
-      }
-
-      button {
-        margin-top: 1rem;
-        padding: 10px 15px;
-        background-color: #333;
-        color: white;
-        border: none;
-        cursor: pointer;
-        border-radius: 4px;
-      }
-
-      #joke {
-        margin-top: 1rem;
-        font-style: italic;
-      }
-
-      footer {
-        margin-top: 3rem;
-        font-size: 0.9em;
-        color: #555;
-      }
-      .panel {
-      display: flex;
-      flex-direction: column;
-      max-width: 400px;
-      gap: 10px;
-      margin-bottom: 20px;
-    }
-    label {
-      display: flex;
-      flex-direction: column;
-      font-weight: bold;
-      font-size: 14px;
-    }
-    #btn-preview {
-      margin-top: 10px;
-    }
-    textarea {
-      width: 100%;
-      height: 120px;
-      margin-top: 10px;
-      font-family: monospace;
-      resize: none;
-    }
-    #btn-copy {
-      margin-top: 10px;
-      padding: 10px;
-    }
-    </style>
+    <link rel="stylesheet" href="style.css" />
   </head>
+
   <body>
     <h1>📦 Mini Librería de APIs</h1>
+    <br /><br /><br />
     <p>
-      Esta es una librería ultra sencilla para hacer llamadas a algunas de las
-      APIs más populares con una sola línea de código. Ideal para quienes
-      quieren empezar un proyecto rápido y no quieren perder tiempo con
+      Esta es una librería ultra sencilla para atacar a algunas de las APIs más
+      populares con el mínimo esfuerzo posible. Ideal para quienes quieren
+      empezar un proyecto rápido y no quieren perder tiempo con
       <code>fetch</code> y configuración.
     </p>
 
-    <h2>🚀 ¿Cómo se usa?</h2>
-    <ol>
-      <li>Descarga o enlaza el archivo <code>apiLibrary.js</code>.</li>
-      <li>
-        Inclúyelo en tu HTML con una etiqueta <code>&lt;script&gt;</code>.
-      </li>
-      <li>
-        Usa comandos simples como: <code>APIUtils.llamada_API_chuck()</code>
-      </li>
-    </ol>
-
-    <h2>💡 Ejemplo en vivo (Chuck Norris API):</h2>
+    <h3>💡 Ejemplo en vivo (Chuck Norris API):</h3>
     <button id="getJoke">¡Dame un chiste!</button>
     <p id="joke"></p>
+    <br /><br /><br />
 
-    <h2>📦 ¿Cómo incluir la librería?</h2>
-    <p>Copia y pega esta línea en tu HTML:</p>
+    <h2>✨ ¿Cómo se usa?</h2>
+    <ol>
+      <li>Enlaza el archivo <code>apiLibrary.js</code>.</li>
+      <li>
+        Elije la API que quieras atacar 💥
+        <aside class="nota">
+          💡 <strong>Nota:</strong> En la versión Beta solo hay una opción ,
+          pero la idea es llegar a +100
+        </aside>
+      </li>
+      <li>
+        Incluye el código proporcionado en tu HTML.
+        <aside class="nota">
+          💡 <strong>Nota:</strong> En la versión beta el JS está incrustado
+          para simplificar.
+        </aside>
+      </li>
+      <li>
+        Estila un botón desde la própia interfaz y mira como cambia el estilo en
+        tiempo real 😍.
+      </li>
+      <li>
+        Copia el CSS generado y pégalo en la hoja de estilos de tu proyecto.
+      </li>
+    </ol>
+    <br /><br /><br />
+
+    <h2 class="title">1 INCLUIR LA LIBRERIA</h2>
+    <p>Copia y pega esta línea en tu HTML al final del <code>Body</code>:</p>
     <pre><code>&lt;script src="https://msg-developer.github.io/MSG-Library/apiCalls/apiLibrary.js"&gt;&lt;/script&gt;</code></pre>
 
-    <p>Después puedes usar funciones como:</p>
-    <pre><code>APIUtils.llamada_API_chuck().then(data => console.log(data));</code></pre>
+    <aside class="nota">
+      💡 <strong>Nota:</strong>
+      <p>En la versión final podrás usar funciones como:</p>
+      <pre><code>APIUtils.llamada_API_chuck();</code></pre>
+    </aside>
 
-    <script src="./apiCalls/apiLibrary.js"></script>
-    <script>
-      document.getElementById("getJoke").addEventListener("click", function () {
-        APIUtils.llamada_API_chuck()
-          .then(function (joke) {
-            document.getElementById("joke").innerText = joke;
-          })
-          .catch(function (error) {
-            document.getElementById("joke").innerText =
-              "Error al obtener el chiste.";
-          });
-      });
-    </script>
-<br><br><br><br><br>
-    <h2>📋 Copia y pega este bloque para usar directamente:</h2>
+    <h2 class="title">2 ELIJE ENTRE MÁS DE 100 APIS</h2>
+    <h2 class="title">3 PEGA ESTE CODIGO EN TU HTML</h2>
     <textarea rows="10" style="width: 100%; font-family: monospace" readonly>
   <!-- Botón Chuck Norris API -->
 <button id="btn-chuck">¡Dame un chiste!</button>
 <div id="resultado-chuck" style="margin-top: 10px;"></div>
-
-<script src="https://msg-developer.github.io/MSG-Library/apiCalls/apiLibrary.js"></script>
 <script>
   document.getElementById('btn-chuck').addEventListener('click', function () {
     APIUtils.llamada_API_chuck().then(function (joke) {
@@ -132,95 +73,50 @@
 </script>
 </textarea
     >
-
     <button onclick="copiarCodigo()">Copiar al portapapeles</button>
-<script>
-  function copiarCodigo() {
-    const textarea = document.querySelector('textarea');
-    textarea.select();
-    document.execCommand('copy');
-    alert('¡Código copiado!');
-  }
-</script>
 
+    <h2 class="title">4 APLICA ESTILO A TU BOTON</h2>
+
+    <div class="panel">
+      <label>
+        Background color:
+        <input type="color" id="input-bg" value="#ff0000" />
+      </label>
+
+      <label>
+        Padding (ej: 10px 20px):
+        <input type="text" id="input-padding" value="10px 20px" />
+      </label>
+
+      <label>
+        Font size (ej: 1rem, 16px):
+        <input type="text" id="input-fontsize" value="1rem" />
+      </label>
+
+      <label>
+        Border radius (ej: 5px):
+        <input type="text" id="input-radius" value="5px" />
+      </label>
+
+      <button id="btn-preview">Botón de prueba</button>
+    </div>
+
+    <h2 class="title">5 PEGA EL CSS GENERADO EN TU HOJA DE ESTILO</h2>
+
+    <textarea id="css-output" readonly></textarea>
+    <button id="btn-copy">Copiar CSS</button>
 <br><br><br><br><br>
-
-<h2>🎨 Personalizador de botón</h2>
-
-<div class="panel">
-  <label>
-    Background color:
-    <input type="color" id="input-bg" value="#ff0000">
-  </label>
-
-  <label>
-    Padding (ej: 10px 20px):
-    <input type="text" id="input-padding" value="10px 20px">
-  </label>
-
-  <label>
-    Font size (ej: 1rem, 16px):
-    <input type="text" id="input-fontsize" value="1rem">
-  </label>
-
-  <label>
-    Border radius (ej: 5px):
-    <input type="text" id="input-radius" value="5px">
-  </label>
-
-  <button id="btn-preview">Botón de prueba</button>
+    <div class="footer-extension">
+  🚀 ¡Ya puedes empezar a usar tus APIs favoritas con estilo!<br />
+  Esto es solo el comienzo... nuevas funciones llegarán muy pronto 😉
 </div>
-
-<h3>🧾 Código CSS generado:</h3>
-<textarea id="css-output" readonly></textarea>
-<button id="btn-copy">Copiar CSS</button>
-
-<script>
-  const btnPreview = document.getElementById("btn-preview");
-  const cssOutput = document.getElementById("css-output");
-
-  const inputs = {
-    bg: document.getElementById("input-bg"),
-    padding: document.getElementById("input-padding"),
-    fontSize: document.getElementById("input-fontsize"),
-    radius: document.getElementById("input-radius")
-  };
-
-  function actualizarEstilos() {
-    const bg = inputs.bg.value;
-    const padding = inputs.padding.value;
-    const fontSize = inputs.fontSize.value;
-    const radius = inputs.radius.value;
-
-    btnPreview.style.backgroundColor = bg;
-    btnPreview.style.padding = padding;
-    btnPreview.style.fontSize = fontSize;
-    btnPreview.style.borderRadius = radius;
-
-    const css = `#btn-chuck {
-background-color: ${bg};
-padding: ${padding};
-font-size: ${fontSize};
-border-radius: ${radius};
-}`;
-    cssOutput.value = css;
-  }
-
-  Object.values(inputs).forEach(input => {
-    input.addEventListener("input", actualizarEstilos);
-  });
-
-  document.getElementById("btn-copy").addEventListener("click", function () {
-    cssOutput.select();
-    document.execCommand("copy");
-    alert("¡CSS copiado!");
-  });
-
-  actualizarEstilos(); // inicializa con valores por defecto
-</script>
-
 
 
     <footer>Hecho con 💻 por JokerDev. Proyecto piloto.</footer>
+
+    <script src="./main.js"></script>
+    <script src="./jokeExample.js"></script>
+    <script src="./copiarCodigo.js"></script>
+    <script src="./apiCalls/apiLibrary.js"></script>
   </body>
 </html>
